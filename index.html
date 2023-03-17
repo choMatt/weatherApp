@@ -5,12 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Noto+Sans+Lao&display=swap" rel="stylesheet">
     <title>Weather App</title>
 </head>
 <body>
-    
+    <main class="Main-window">
 
-    
+         <!-----  City Search  ----->
+
+        <div class="CitySearch-panel">
+
+            <form action="" class="search-bar">
+                <input class="inputBar" type="text" placeholder="City">
+                <button>Search</button>
+            </form>
+
+        </div>
+
+        <!-----  Weather Display  ----->
+
+        <div class="WeatherIcons-panel">
+
+            <div class="WeatherHeading-container">
+                <h3>Sunny</h3>
+            </div>
+
+            <div class="WeatherImages-container">
+                <img src="/weatherImages/" alt="weatherdisplay">
+            </div>
+
+        </div>
+
+        <!-----  Weather Data  ----->
+
+        <div class="WeatherDetails-panel">
+
+            <div class="WeatherTemp-container">
+                <h2>0°</h2>
+            </div>
+
+            <div class="WeatherData-container">
+                <ul class="left-data">
+                    <li><p>Feels Like</p></li>
+                    <li><p>Humidity</p></li>
+                    <li><p>Wind</p></li>
+                    <li><p>Visibility</p></li>
+                </ul>
+                <ul class="right-data">
+                    <li>0°</li>
+                    <li>0%</li>
+                    <li>0 Km/h</li>
+                    <li>0 Km</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-----  Forecast Data  ----->
+
+        <div class="Foreast-panel">
+            <ul class="forecast-list-card">
+                <li>Tomorrow<span class="forecast-temp">0°</span></li>
+                <li>Monday<span class="forecast-temp">0°</span></li>
+                <li>Tuesday<span class="forecast-temp">0°</span></li>
+            </ul>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
