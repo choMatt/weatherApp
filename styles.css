@@ -5,9 +5,138 @@
   }
   
   body {
+    height: 100vh;
     font-family: Arial, sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    background-color: #fff;
+    background-color: #1E1E1E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  li {
+    list-style:  none;
+  }
+
+ 
+  /*-- MAIN WINDOW --*/
+
+  .Main-window { 
+    width: 320px; height: 568px;
+    background-color: #FBFFCF;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Noto Sans Lao', sans-serif;
+
+  }
+
+   /*-- PANELS --*/
+
+   .CitySearch-panel, 
+   .WeatherDisplay-panel, 
+   .WeatherDetails-panel,
+   .Forecast-panel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   
+  .CitySearch-panel {
+    /* border: 3px solid orangered; */
+    height: 60px;
+  }
+  
+  .WeatherDisplay-panel {
+    /* border: 3px solid blueviolet; */
+    height: 330px;
+    flex-direction: column;
+    gap:14px;
+    
+  }
+  
+  .WeatherDetails-panel {
+    /* border: 3px solid red; */
+    height: 100px;
+    gap: 12px;
+    padding-left:20px;
+  }
+
+  .Forecast-panel{
+    /* border: 3px solid cornflowerblue; */
+    height: 170px;
+  }
+
+   /*-- CONTAINERS --*/
+
+
+   .WeatherTemp-container{
+    /* border:1px solid black; */
+    width: 70px; height: 74px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+
+    /*-- LISTS --*/
+
+    .WeatherData-list, .Forecast-list {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      width: 130px;
+      line-height: 16px;
+      letter-spacing: 2px;
+    }
+    
+    .Forecast-list {
+      width: 215px; height: 35px;
+      text-transform: uppercase;
+      align-items: center;
+      font-size: 9px;
+      letter-spacing: 1px;
+      padding:0px 5px 0px 5px;
+    }
+
+    .Forecast-list:nth-child(2){
+      border-top:1px solid black;
+      border-bottom:1px solid black;
+    }
+
+   /*! Unorganized Area  */
+
+   .Weather-info {
+    text-transform: uppercase;
+    font-size:9px;
+    letter-spacing: 1px;
+   }
+
+   .Weather-temp {
+    font-size: 50px;
+    font-weight: 580;
+    font-family: 'Noto Sans Lao', sans-serif;
+   }
+
+
+  .Weather-data {
+    width: 55px;
+    font-size:9px
+   }
+
+  
+
+
+   hr {
+    border: none;
+    border-left: 1px solid black;
+    height: 80px;
+    width: 0;
+    margin: 0;
+    padding: 0;
+  }
+
+  .icons{
+    width: 180px;
+  }

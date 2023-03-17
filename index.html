@@ -26,14 +26,14 @@
 
         <!-----  Weather Display  ----->
 
-        <div class="WeatherIcons-panel">
+        <div class="WeatherDisplay-panel">
 
             <div class="WeatherHeading-container">
                 <h3>Sunny</h3>
             </div>
 
-            <div class="WeatherImages-container">
-                <img src="/weatherImages/" alt="weatherdisplay">
+            <div class="WeatherImage-container">
+                <img class="icons" src="/WeatherIcons/Sunny.svg" alt="weatherdisplay">
             </div>
 
         </div>
@@ -43,21 +43,31 @@
         <div class="WeatherDetails-panel">
 
             <div class="WeatherTemp-container">
-                <h2>0°</h2>
+                <h2 class="Weather-temp">21°</h2>
             </div>
 
+            <hr>
+
             <div class="WeatherData-container">
-                <ul class="left-data">
-                    <li><p>Feels Like</p></li>
-                    <li><p>Humidity</p></li>
-                    <li><p>Wind</p></li>
-                    <li><p>Visibility</p></li>
-                </ul>
-                <ul class="right-data">
-                    <li>0°</li>
-                    <li>0%</li>
-                    <li>0 Km/h</li>
-                    <li>0 Km</li>
+                <ul>
+                    <li class="WeatherData-list">
+                        <span class="Weather-info">Feels Like</span>
+                        <span class="Weather-data">0°</span>
+                    </li>
+                    <li class="WeatherData-list">
+                        <span class="Weather-info">Humidity</span>
+                        <span class="Weather-data">0%</span>
+                    </li>
+                    
+                    <li class="WeatherData-list">
+                        <span class="Weather-info">Wind</span>
+                        <span class="Weather-data">0 Km/h</span>
+                    </li>
+                    
+                    <li class="WeatherData-list">
+                        <span class="Weather-info">Visibility</span>
+                        <span class="Weather-data">0 Km</span>
+                    </li>
                 </ul>
             </div>
 
@@ -65,11 +75,20 @@
 
         <!-----  Forecast Data  ----->
 
-        <div class="Foreast-panel">
-            <ul class="forecast-list-card">
-                <li>Tomorrow<span class="forecast-temp">0°</span></li>
-                <li>Monday<span class="forecast-temp">0°</span></li>
-                <li>Tuesday<span class="forecast-temp">0°</span></li>
+        <div class="Forecast-panel">
+            <ul>
+                <li class="Forecast-list">
+                    <span class="forecast-week">Tomorrow</span>
+                    <span class="forecast-temp">0°</span>
+                </li>
+                <li class="Forecast-list">
+                    <span class="forecast-week">Monday</span>
+                    <span class="forecast-temp">0°</span>
+                </li>
+                <li class="Forecast-list">
+                    <span class="forecast-week">Tuesday</span>
+                    <span class="forecast-temp">0°</span>
+                </li>
             </ul>
         </div>
     </main>
