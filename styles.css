@@ -138,3 +138,20 @@
   .icons{
     width: 180px;
   }
+
+  .Weather-temp::after,
+  .feels-like-display::after {
+    content: "°";
+  }
+  
+  .humidity-display::after {
+    content: "%";
+  }
+  
+  .wind-display::after {
+    content: "Km/h";
+  }
+  
+  .visibility-display::after {
+    content: "Km";
+  }
