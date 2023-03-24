@@ -7,6 +7,7 @@ const feelsLikeDisplay = document.querySelector(".feels-like-display")
 const humidityDisplay = document.querySelector(".humidity-display")
 const windDisplay = document.querySelector(".wind-display")
 const visibilityDisplay = document.querySelector(".visibility-display")
+const imageDisplay = document.querySelector(".icons")
 const weatherHeadingDisplay = document.querySelector(".heading-display")
 
 form.addEventListener('submit', handleFormSubmit);
@@ -42,6 +43,7 @@ async function getLocation(location) {
           const wind = res.data.wind.speed
           const visibility = res.data.visibility / 1000;
           const weatherCondition = res.data.weather[0].main
+          weatherIconDisplay(weatherCondition)
           weatherDataDisplay(temp, feelsLike, humidity, wind, visibility)
     } catch (error) {
           console.log("Error", error)
@@ -55,8 +57,18 @@ async function getLocation(location) {
     windDisplay.textContent = wind;
     visibilityDisplay.textContent = Math.floor(visibility);
   }
+  
 
-
-  function weatherIconDisplay(){
-
+  function weatherIconDisplay(condition) {
+    const weatherIcons = {
+      Clear: "/WeatherIcons/Sunny.svg",
+      Clouds: "/WeatherIcons/Clouds.svg",
+      Thunderstorm: "/WeatherIcons/Storm.svg",
+      Rain: "/WeatherIcons/Rain.svg",
+    };
+  
+    const icon = weatherIcons[condition];
+  
+    imageDisplay.setAttribute("src", icon);
+    weatherHeadingDisplay.textContent = condition;
   }
