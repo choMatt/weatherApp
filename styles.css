@@ -70,7 +70,8 @@
   }
 
    /*-- CONTAINERS --*/
-
+   
+  
 
    .WeatherTemp-container{
     /* border:1px solid black; */
@@ -78,6 +79,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
+   }
+
+   .search-container{
+    /* border:1px solid black; */
+    width: 300px;
+    display: flex;
+    gap:40px;
    }
 
     /*-- LISTS --*/
@@ -154,4 +162,27 @@
   
   .visibility-display::after {
     content: "Km";
+  }
+
+
+  .inputBar{
+    /* border:1px solid black; */
+    outline: none;
+    border:none;
+    background-color: transparent;
+    width:200px; height: 30px;
+    font-size: 25px;
+  }
+
+  .inputBar:focus{
+    border-bottom: 1px solid black;;
+  }
+
+
+
+  .forecast-temp{
+    display: flex;
+    align-items: center;
+    gap:10px;
+    font-size:11px;
   }
