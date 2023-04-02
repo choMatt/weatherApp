@@ -1,29 +1,28 @@
+// > TODO: 
+// [] Add more weather condition icon
+// [] redesign the input area in css
+// [] look for function that needs refactoring 
 
 const apiKey = "1efdb0fc02bf4fbdc89bb8f2ec21d848";
 const form = document.querySelector(".search-container"); 
 
 form.addEventListener('submit', handleFormSubmit);
 
-
-// todo: Add more weather condition icon
-// todo: redesign the input area in css
-// todo: refactor a bit 
-
-// - handle the users input request and process all the data back.
+// > handle the users input request and process all the data back.
 async function handleFormSubmit(event) { 
   const cityInput = document.querySelector('.inputBar'); 
   event.preventDefault(); 
   const location = cityInput.value; 
   try { 
     const [latitude, longitude] = await getLocation(location); 
-    await getWeatherData(latitude, longitude, apiKey); 
-    await getForecast(latitude, longitude, apiKey); 
+    await getWeatherData(latitude, longitude); 
+    await getForecast(latitude, longitude); 
   } catch (error) { 
     console.log("Error:", error.message); 
   } 
 }  
 
-// - Take the location of what the user has entered on the form.
+// > Take the location of what the user has entered on the form.
 async function getLocation(location) { 
   const baseURL = 'http://api.openweathermap.org/geo/1.0'; 
   const locationReq = `${baseURL}/direct?q=${location}&appid=${apiKey}`; 
@@ -46,15 +45,14 @@ async function getLocation(location) {
   } 
 }
 
-// - Receive the weather details/data from OpenWeather.
-async function getWeatherData(lat, long, apiKey) { 
+// > Receive the weather details/data from OpenWeather.
+async function getWeatherData(lat, long) { 
   const baseUrl = "https://api.openweathermap.org/data/2.5/weather"; 
   const units = "metric"; 
   const weatherReq = `${baseUrl}?lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`; 
    
   try { 
     const res = await axios.get(weatherReq); 
-    console.log(res)
     if (res.status !== 200){
       throw new Error(`Error fetching weather data. Status code: ${res.status}`); 
     } 
@@ -82,8 +80,8 @@ async function getWeatherData(lat, long, apiKey) {
 
 }  
 
-// - Recieve the Forecast temp and weather conditon data from OpenWeather.
-async function getForecast(lat, long, apiKey){ 
+// > Recieve the Forecast temp and weather conditon data from OpenWeather.
+async function getForecast(lat, long){ 
   const baseURL = `http://api.openweathermap.org/data/2.5/forecast`; 
   const units = 'metric'; 
   const forecastReq = `${baseURL}?lat=${lat}&lon=${long}&units=${units}&appid=${apiKey}`; 
@@ -118,7 +116,7 @@ async function getForecast(lat, long, apiKey){
 
 }
 
-// - Get the data on getWeatherData() and display it.
+// > Get the data on getWeatherData() and display it.
 function weatherDataDisplay(maintemp, feelslike, humidity, wind, visibility){
   const mainTempDisplay = document.querySelector(".Weather-temp");
   const feelsLikeDisplay = document.querySelector(".feels-like-display");
@@ -133,7 +131,7 @@ function weatherDataDisplay(maintemp, feelslike, humidity, wind, visibility){
   visibilityDisplay.textContent = Math.floor(visibility);
 }
 
-// - Get the weather condition from getWeatherData() and display it.
+// > Get the weather condition from getWeatherData() and display it.
 function weatherIconDisplay(condition) {
   const weatherHeadingDisplay = document.querySelector(".heading-display");
   const imageDisplay = document.querySelector(".icons");
@@ -151,7 +149,7 @@ function weatherIconDisplay(condition) {
   weatherHeadingDisplay.textContent = condition;
 }
 
-// - Get the weather condition on getForecast() and display it.
+// > Get the weather condition on getForecast() and display it.
 function forecastIconDisplay(tomorrow, monday, tuesday) {
   const tomorrowIcon = document.querySelector(".tomorrow-icon");
   const mondayIcon = document.querySelector(".monday-icon");
@@ -169,7 +167,7 @@ function forecastIconDisplay(tomorrow, monday, tuesday) {
   tuesdayIcon.setAttribute("src", `${weatherIcons[tuesday]}`);
 }
 
-// - Get the forecast condition from the getForecast() and display it
+// > Get the forecast condition from the getForecast() and display it
 function forecastTempDisplay(tom, mon, tues){
   const tomTemp = document.querySelector(".tomorrow-temperature")
   const monTemp = document.querySelector(".monday-temperature")
@@ -179,4 +177,3 @@ function forecastTempDisplay(tom, mon, tues){
   monTemp.textContent = Math.floor(mon);
   tuesTemp.textContent = Math.floor(tues);
 }
-
